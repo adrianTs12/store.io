@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de productos {% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="/static/css/admin/products.css">
+
+{% endblock %}
+
+{% block content %} 
+
+    <div class="header">
+        <a href="/dashboard">
+            <img src="/static/img/regresar.png">
+        </a>
+        <h4> Tabla de productos: </h4>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th> ID: </th>
+                <th> ARTICULO: </th>
+                <th> CANTIDAD: </th>
+                <th> PRECIO: </th>
+                <th> ACCION: </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+                <tr>
+                    <td> {{ producto.id }} </td>
+                    <td> {{ producto.nombre }} </td>
+                    <td> {{ producto.cantidad }} </td>
+                    <td> ${{ producto.precio }} </td>
+                    <td>
+                        <a href="/dashboard/products/edit/{{ producto.id }}">
+                            <button class="btn btn-green"> Editar </button>
+                        </a>
+                        <a href="/dashboard/products/delete/{{ producto.id }}">
+                            <button class="btn btn-red"> Eliminar </button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

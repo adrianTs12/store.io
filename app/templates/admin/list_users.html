@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de usuarios {% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="/static/css/admin/products.css">
+
+{% endblock %}
+
+{% block content %} 
+
+    <div class="header">
+        <a href="/dashboard">
+            <img src="/static/img/regresar.png">
+        </a>
+        <h4> Tabla de usuarios: </h4>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th> ID: </th>
+                <th> Nombre: </th>
+                <th> Email: </th>
+                <th> Contraseña: </th>
+                <th> Direccion: </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td> {{ usuario.id }} </td>
+                    <td> {{ usuario.nombre }} </td>
+                    <td> {{ usuario.email }} </td>
+                    <td> {{ usuario.contraseña }} </td>
+                    <td> {{ usuario.direccion }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

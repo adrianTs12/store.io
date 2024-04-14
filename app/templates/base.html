@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="shortcut icon" href="/static/img/tienda.png" type="image/x-icon">
+    <title> {% block title %} {% endblock %} </title>
+    {% block links %} {% endblock %}
+</head>
+<body>
+    
+    <header id="header">
+
+        <img src="/static/img/tienda.png" class="header-logo">
+
+        <h4 class="header-title"> Store.io </h4>
+        
+        <div class="btn-menu" id="btn-menu">
+
+            <img src="/static/img/menu.png" id="btn-menu-img">
+
+        </div>
+
+        <nav>
+            <ul>
+                {% if g.usuario %}
+
+                <a href="/cart"> <li> Carrito </li> </a>
+                <a href="/logout"> <li> Cerrar sesion </li> </a>
+
+                {% else %}
+
+                <a href="/login"> <li> Iniciar sesion </li> </a>
+                <a href="/signup"> <li> Registrar </li> </a>
+
+                {% endif %}
+
+                <a href="/help"> <li> Ayuda </li> </a>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    {% block header %}{% endblock %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% if messages %}
+
+            {% for category, message in messages %}
+
+                <div class="alert alert-{{ category }}">
+                    <span>{{ message }}</span>
+                    <button class="alert-close-btn" onclick="this.parentElement.style.display='none';">×</button>
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+    
+    {% block content %} {% endblock %}
+
+    <script src="/static/js/base.js"></script>
+
+</body>
+</html>

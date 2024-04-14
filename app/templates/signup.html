@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Registrate {% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="/static/css/signup.css">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="form">
+
+        <h4 class="form-title"> Registrate </h4>
+
+        <form action="" method="post">
+            <span class="form-text"> Nombre: </span>
+            <input type="text" name="nombre" class="form-input" autocomplete="off">
+
+            <span class="form-text"> Correo: </span>
+            <input type="email" name="email" class="form-input" autocomplete="off">
+
+            <span class="form-text"> Direccion: </span>
+            <input type="text" name="direccion" class="form-input" autocomplete="off">
+
+            <span class="form-text"> Contraseña: </span>
+            <input type="password" name="contraseña" class="form-input" autocomplete="off">
+
+            <button class="form-btn"> Registrar </button>
+
+        </form>
+
+        <span class="form-link"> ¿Ya tienes una cuenta? <a href="/login"> Inicia Sesion! </a> </span>
+
+    </div>
+
+{% endblock %}

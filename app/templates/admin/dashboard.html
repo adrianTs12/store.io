@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="/static/css/admin/dashboard.css">
+
+{% endblock %}
+
+{% block content %}
+
+    <h3 class="title"> Dashboard: </h3>
+
+    <div class="contenedor">
+
+        <a href="/dashboard/add/product">
+            <div class="item">
+                <img src="/static/img/agregar-producto.png">
+                <h4 class="item-title"> Agregar producto </h4>
+            </div>
+        </a>
+
+        <a href="/dashboard/products">
+            <div class="item">
+                <img src="/static/img/productos.png">
+                <h4 class="item-title"> Productos </h4>
+            </div>
+        </a>
+
+        <a href="/dashboard/pedidos">
+            <div class="item">
+                <img src="/static/img/pedidos.png">
+                <h4 class="item-title"> Pedidos </h4>
+            </div>
+        </a>
+
+        <a href="/dashboard/users">
+            <div class="item">
+                <img src="/static/img/usuarios.png">
+                <h4 class="item-title"> Usuarios </h4>
+            </div>
+        </a>
+
+    </div>
+
+{% endblock %}

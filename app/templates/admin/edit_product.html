@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %} Agregar nuevo producto {% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="/static/css/admin/add_product.css">
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="header">
+        <a href="/dashboard">
+            <img src="/static/img/regresar.png">
+        </a>
+        <h4> Editar producto </h4>
+    </div>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="form">
+
+            <div class="form-image">
+                <img src="{{ producto.imagen }}" id="image-product">
+            </div>
+
+            <input type="file" name="imagen" class="input-file" id="input-image">
+
+            <div class="form-input">
+                <input type="text" name="nombre" value="{{ producto.nombre }}" placeholder="Nombre del articulo">
+            </div>
+
+            <div class="form-input">
+                <input type="number" name="cantidad" value="{{ producto.cantidad }}" placeholder="Cantidad del articulo">
+            </div>
+
+            <div class="form-input">
+                <input type="number" name="precio" value="{{ producto.precio }}" placeholder="Precio del articulo">
+            </div>
+
+            <div class="form-button">
+                <h4> Editar Articulo </h4>
+                <button></button>
+            </div>
+
+        </div>
+    </form>
+
+
+    <script>
+
+        const input = document.getElementById('input-image');
+        let image = document.getElementById('image-product');
+
+        input.addEventListener('change', function(){
+            image.src = URL.createObjectURL(input.files[0]);
+        });
+
+    </script>
+
+{% endblock %}

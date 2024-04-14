@@ -1,0 +1,22 @@
+.header {
+    padding: 10px;
+    background-color: white;
+    display: flex;
+}
+
+.header a img {
+    width: 20px;
+    height: 20px;
+}
+
+.header h4 {
+    margin: 0px 10px;
+}
+
+.title {
+    margin: 10px;
+}
+
+.description {
+    margin: 10px;
+}

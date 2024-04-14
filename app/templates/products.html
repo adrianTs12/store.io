@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %} Catalogo de articulos {% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="/static/css/products.css">
+
+{% endblock %}
+
+{% block header %}
+
+    <div class="header">
+    
+        <h4> Catalogo: </h4>
+
+        <div class="header-input">
+            <img src="/static/img/lupa.png">
+            <input type="search" id="search" placeholder="Buscar:">
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+    {% if productos == [] %}
+
+        <h4 class="title"> Sin resultados. </h4>
+
+        <div class="error">
+
+            <img src="/static/img/error.png">
+
+            <h4 class="error-title"> Sin servicio! </h4>
+
+        </div>
+
+    {% endif %}
+
+    <div class="contenedor"> 
+
+        {% for producto in productos %}
+
+        <div class="producto">
+
+            <img src="{{ producto.imagen }}">
+
+            <h4 class="producto-title"> {{ producto.nombre }} </h4>
+
+            <div class="info">
+                <span> ${{ producto.precio }} </span>
+
+                <a href="/products/{{ producto.id }}">
+                    <button> Detalles </button>
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <script src="/static/js/products.js"></script>
+
+{% endblock %}

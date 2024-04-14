@@ -1,0 +1,45 @@
+.title {
+    margin: 10px;
+}
+
+.contenedor {
+    width: 800px;
+    margin: 10px auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.contenedor a {
+    text-decoration: none;
+}
+
+.item {
+    width: 200px;
+    height: 180px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 5px #3d3d3d;
+}
+
+.item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    margin: 10px auto;
+}
+
+.item-title {
+    color: black;
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    .contenedor {
+        width: 250px;
+        grid-template-columns: auto;
+    }
+}

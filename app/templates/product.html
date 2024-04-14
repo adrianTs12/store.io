@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %} Detalles de articulo {% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="/static/css/product.css">
+
+{% endblock %}
+
+{% block header %}
+
+    <div class="header">
+
+        <a href="/products">
+            <img src="/static/img/regresar.png">
+        </a>
+
+        <h4> Detalles del producto </h4>
+
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="contenedor">
+
+        <div class="producto">
+            <div class="producto-imagen">
+                <img src="{{ articulo.imagen }}" alt="">
+            </div>
+
+            <h4 class="producto-nombre"> {{ articulo.nombre }} </h4>
+
+            {% if articulo.cantidad > 0%}
+                <span class="producto-estado"> Disponible! </span>
+            {% else %}
+                <span class="producto-estado color-red"> No esta disponible! </span>
+            {% endif %}
+
+            <span class="producto-precio" id="precio"> ${{ articulo.precio }} </span>
+
+            <div class="producto-opciones">
+
+                <p> Cantidad: </p>
+
+                <button id="btn-menos"> - </button>
+                <span class="producto-cantidad" id="cantidad"> 1 </span>
+                <button id="btn-mas"> + </button>
+
+                <input type="hidden" id="cantidad-max" value="{{ articulo.cantidad}}">
+
+            </div>
+
+        </div>
+
+        <form action="/cart/add/{{ articulo.id }}" method="post">
+            <div class="boton">
+
+                <input type="hidden" id="input" value="1" name="cantidad">
+
+                <img src="/static/img/carrito.png">
+
+                <h4> Agregar al carrito </h4>
+
+                <button></button>
+
+            </div>
+        </form>
+
+    </div>
+
+    <script src="/static/js/product.js"></script>
+
+{% endblock %}

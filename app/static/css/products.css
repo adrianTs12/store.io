@@ -1,0 +1,120 @@
+.title {
+    margin: 10px;
+}
+
+.header {
+    padding: 10px;
+    display: flex;
+    background-color: #fff;
+}
+
+.header img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 2px 0px;
+}
+
+.header h4 {
+    margin: 3px 5px;
+}
+
+.header-input {
+    width: 218px;
+    height: 30px;
+    position: absolute;
+    margin: -3px 90px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    display: flex;
+}
+
+.header-input img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 5px 5px;
+}
+
+.header-input input {
+    display: block;
+    background-color: transparent;
+    width: 180px;
+    padding: 5px 0px;
+    border: none;
+    margin: 0px 0px 0 0;
+    outline: none;
+    /* display: none; */
+}
+
+.error {
+    width: 200px;
+    height: 190px;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+.error img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 10px auto;
+}
+
+.error-title {
+    text-align: center;
+}
+
+
+.contenedor {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.producto {
+    width: 170px;
+    height: 240px;
+    background-color: #fff;
+    margin: 50px auto 0px 0px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.producto img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    margin: 10px auto;
+}
+
+.producto-title {
+    margin: auto 10px;
+    height: 20px;
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.info {
+    margin: 8px 10px;
+}
+
+.info span {
+    color: green;
+}
+
+.info a {
+    text-decoration: none;
+}
+
+.info button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    margin: 10px auto;
+    background-color: black;
+    color: white;
+}

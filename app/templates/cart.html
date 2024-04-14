@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block title %} Carrito de compras {% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="/static/css/cart.css">
+
+{% endblock %}
+
+{% block header %}
+
+    <div class="header">
+        <a href="/products">
+            <img src="/static/img/regresar.png">
+        </a>
+
+        <h4> Carrito: </h4>
+
+        <select name="" id="select">
+            <option value="realizadas"> Compras realizadas </option>
+            <option value="pendientes" selected> Pendientes </option>
+        </select>
+
+    </div>
+
+{% endblock %}
+
+
+{% block content %} 
+
+    <div class="contenedor-productos" id="list-products">
+
+
+        <div id="realizadas"  style="display: none;">
+            {% for producto in productos_comprados %}
+
+            <div class="producto">
+                <div class="producto-imagen">
+                    <img src="{{ producto.imagen }}">
+                </div>
+                <div class="producto-info">
+                    <h4 class="producto-titulo"> {{ producto.articulo }} </h4>
+                    <span class="producto-cantidad"> {{ producto.cantidad }} Articulos </span>
+                </div>
+                <div class="producto-info-precio">
+                    <h4 class="producto-precio"> ${{ producto.precio }} </h4>
+                    <a href="/cart/delete/{{ producto.id }}" class="btn-delete">
+                        <img src="/static/img/x.png">
+                    </a>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+        <div id="pendientes">
+            {% for producto in productos_pendientes %}
+
+            <div class="producto">
+                <div class="producto-imagen">
+                    <img src="{{ producto.imagen }}">
+                </div>
+                <div class="producto-info">
+                    <h4 class="producto-titulo"> {{ producto.articulo }} </h4>
+                    <span class="producto-cantidad"> {{ producto.cantidad }} Articulos </span>
+                </div>
+                <div class="producto-info-precio">
+                    <h4 class="producto-precio color-red"> ${{ producto.precio }} </h4>
+                    <a href="/cart/delete/{{ producto.id }}" class="btn-delete">
+                        <img src="/static/img/x.png">
+                    </a>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+
+        <!-- {% for producto in productos %}
+
+            {% if producto.comprado %}
+            <div class="producto" id="realizadas">
+
+            {% else %}
+            <div class="producto color-red" id="pendientes">
+
+            {% endif %}
+            <div class="producto-imagen">
+                <img src="{{ producto.icono }}">
+            </div>
+        
+                <div class="producto-info">
+                    <h4 class="producto-titulo"> {{ producto.nombre_producto }} </h4>
+                    <span class="producto-cantidad"> {{ producto.cantidad }} Articulos </span>
+                </div>
+        
+                <div class="producto-info-precio">
+        
+                    <h4 class="producto-precio"> ${{ producto.precio_total }} </h4>
+                    <a href="#" class="btn-delete">
+                        <img src="/static/img/x.png">
+                    </a>
+                </div>
+        
+            </div>
+
+
+        {% endfor %} -->
+
+    </div>
+
+    <div class="contenedor-buttons">
+
+        <div class="contenedor-total" id="total-realizadas" style="display: none;">
+
+            <h4 class="texto-total"> Total: </h4>
+
+            <h4 class="texto-precio_total" id="precio_total"> ${{ total_realizadas }} </h4>
+
+        </div>
+
+        <div class="contenedor-total" id="total-pendientes">
+
+            <h4 class="texto-total"> Total: </h4>
+
+            <h4 class="texto-precio_total color-red" id="precio_total"> ${{ total_pendientes }} </h4>
+
+        </div>
+
+        <a href="/cart/buy">
+
+            <button class="boton-comprar"> Confirmar Compra! </button>
+
+        </a>
+
+    </div>
+
+    <script src="/static/js/cart.js"></script>
+
+{% endblock %}

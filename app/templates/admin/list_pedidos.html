@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de productos {% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="/static/css/admin/pedidos.css">
+
+{% endblock %}
+
+{% block content %} 
+
+    <div class="header">
+        <a href="/dashboard">
+            <img src="/static/img/regresar.png">
+        </a>
+        <h4> Tabla de pedidos: </h4>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th> ID: </th>
+                <th> CLIENTE: </th>
+                <th> ARTICULO: </th>
+                <th> CANTIDAD: </th>
+                <th> PRECIO: </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pedido in pedidos %}
+                <tr>
+                    <td> {{ pedido.id }} </td>
+                    <td> {{ pedido.cliente }} </td>
+                    <td> {{ pedido.articulo }} </td>
+                    <td> {{ pedido.cantidad }} </td>
+                    <td> ${{ pedido.precio_total }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

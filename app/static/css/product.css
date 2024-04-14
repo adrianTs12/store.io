@@ -1,0 +1,114 @@
+.header {
+    padding: 10px;
+    background-color: white;
+    display: flex;
+}
+
+.header a img {
+    width: 20px;
+    height: 20px;
+}
+
+.header h4 {
+    margin: 0px 10px;
+}
+
+.contenedor {
+    width: 300px;
+    height: fit-content;
+    margin: 10px auto;
+}
+
+.producto {
+    width: 300px;
+    height: 420px;
+    background-color: white;
+    margin: 40px auto;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.producto-imagen {
+    width: 300px;
+    height: 250px;
+    background-color: #2b2b2b;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producto-nombre {
+    margin: 10px;
+}
+
+.producto-estado {
+    margin: 10px;
+    display: block;
+}
+
+.producto-precio {
+    margin: 10px;
+    color: green
+}
+
+.producto-opciones {
+    margin: 10px;
+}
+
+.producto-opciones p {
+    margin: 10px 0;
+}
+
+.producto-opciones button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid;
+}
+
+.producto-opciones span {
+    padding: 10px;
+}
+
+.boton {
+    width: 300px;
+    height: 55px;
+    /* background-color: blue; */
+    background-color: #1E90FF;
+    margin: 20px auto;
+    display: flex;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    position: sticky;
+}
+
+.boton img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 3px 25px;
+    position: absolute;
+}
+
+.boton h4 {
+    color: white;
+    margin: 5px 10px;
+    display: block;
+    margin: auto;
+}
+
+.boton button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.color-red {
+    color: red;
+}
